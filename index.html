@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Accessible feedback form for a web engineering TypeScript lab.">
+  <title>Feedback | Web Engineering Lab</title>
+  <link rel="stylesheet" href="public/styles.css">
+  <script type="module" src="public/js/main.js"></script>
+</head>
+<body>
+  <main class="page-shell">
+    <section class="panel" aria-labelledby="page-title">
+      <p class="eyebrow">WEB ENGINEERING LAB</p>
+      <h1 id="page-title">Share your feedback</h1>
+      <p class="intro">Tell us how your experience went. Fields marked required must be completed.</p>
+      <form id="feedback-form" novalidate>
+        <div class="field">
+          <label for="name">Name <span aria-hidden="true">*</span></label>
+          <input id="name" name="name" autocomplete="name" required minlength="2" aria-describedby="name-error">
+          <p class="field-error" id="name-error"></p>
+        </div>
+        <div class="field">
+          <label for="email">Email <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+          <p class="field-error" id="email-error"></p>
+        </div>
+        <div class="field">
+          <label for="rating">How was your experience? <span aria-hidden="true">*</span></label>
+          <select id="rating" name="rating" required aria-describedby="rating-error">
+            <option value="">Choose a rating</option>
+            <option value="great">Great</option>
+            <option value="okay">Okay</option>
+            <option value="poor">Needs improvement</option>
+          </select>
+          <p class="field-error" id="rating-error"></p>
+        </div>
+        <div class="field">
+          <label for="message">Comments <span aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" rows="4" required minlength="10" aria-describedby="message-error"></textarea>
+          <p class="field-error" id="message-error"></p>
+        </div>
+        <button type="submit">Send feedback</button>
+        <p id="form-status" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+        <section class="panel" aria-labelledby="slots-title">
+      <p class="eyebrow">BOOK A SESSION</p>
+      <h2 id="slots-title">Available Lab Slots</h2>
+      <p class="intro">Choose a lab session and check its availability.</p>
+
+      <div class="slot-list">
+        <article class="slot-card">
+          <h3>Web Engineering Lab</h3>
+          <p>Time: 9:00 AM – 10:00 AM</p>
+          <p>Available seats: 5</p>
+          <button type="button" class="book-slot">Book this slot</button>
+        </article>
+
+        <article class="slot-card">
+          <h3>TypeScript Practice</h3>
+          <p>Time: 10:00 AM  11:00 AM</p>
+          <p>Available seats: 3</p>
+          <button type="button" class="book-slot">Book this slot</button>
+        </article>
+
+        <article class="slot-card">
+          <h3>DOM and JavaScript</h3>
+          <p>Time: 11:00 AM  12:00 PM</p>
+          <p>Available seats: 0</p>
+          <button type="button" class="book-slot" disabled>Fully booked</button>
+        </article>
+      </div>
+
+      <p id="booking-status" class="status" role="status" aria-live="polite"></p>
+    </section>
+    <footer>Built with semantic HTML, accessible validation, and TypeScript.</footer>
+  </main>
+</body>
+</html>
